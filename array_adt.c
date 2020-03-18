@@ -11,7 +11,6 @@ struct Array
 
 typedef struct Array arr;
 
-
 int main(void)
 {
     int size;
@@ -36,6 +35,13 @@ int main(void)
     insert(&A, 4, 12);
 
     display(A);
+
+    delete(&A, 4);
+
+    display(A);
+
+    printf("%d\n", binary_search(&A, 3));
+    printf("%d\n", binary_search(&A, 19));
 
     free(A.A);
 
