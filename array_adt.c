@@ -24,27 +24,28 @@ int main(void)
 
     display(A);
 
-    printf("%s", "Enter the element to append: ");
+    printf("%s", "Enter the element to insert at 2: ");
     int element;
     scanf("%d", &element);
 
-    append(&A, element);
+    // append(&A, element);
+    insert(&A, 2, element);
 
     display(A);
 
-    insert(&A, 4, 12);
+    // insert(&A, 4, 12);
 
-    display(A);
+    // display(A);
 
-    delete(&A, 4);
+    // delete(&A, 4);
 
-    display(A);
+    // display(A);
 
-    printf("%d\n", linear_search(&A, 3));
-    printf("%d\n", linear_search(&A, 19));
+    // printf("%d\n", linear_search(&A, 3));
+    // printf("%d\n", linear_search(&A, 19));
 
     printf("Element at index 4: %d\n", get(&A, 4));
-    set(&A, 3, 2);
+    // set(&A, 3, 2);
 
     display(A);
 
@@ -53,15 +54,25 @@ int main(void)
 
     printf("Avg: %d\n", avg(&A));
 
-    reverse(&A);
+    // reverse(&A);
+
+    // display(A);
+
+    // rotate(&A, 'l');
+
+    // display(A);
+
+    // rotate(&A, 'r');
+
+    insert_sort(&A, 4);
 
     display(A);
 
-    rotate(&A, 'l');
+    is_sorted(&A);
+
+    part(&A);
 
     display(A);
-
-    rotate(&A, 'r');
 
     free(A.A);
 

@@ -27,3 +27,8 @@ int avg(arr *p_a);
 
 void reverse(arr *p_a);
 void rotate(arr *p_a, char r);
+
+void insert_sort(arr *p_a, int p_element);
+
+void is_sorted(arr *p_a);
+void part(arr *p_a);

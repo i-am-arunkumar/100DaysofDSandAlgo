@@ -212,3 +212,48 @@ void rotate(arr *p_a, char r)
         p_a->A[0] = temp;
     }
 }
+
+void insert_sort(arr *p_a, int p_element)
+{
+    int i = p_a->length - 1;
+
+    while (p_a->A[i] > p_element)
+    {
+        p_a->A[i + 1] = p_a->A[i];
+        i--;
+    }
+
+    p_a->A[i + 1] = p_element;
+    p_a->length++;
+}
+
+void is_sorted(arr *p_a)
+{
+    for (int i = 0; i < p_a->length - 1; i++)
+    {
+        if (p_a->A[i] > p_a->A[i + 1])
+        {
+            puts("The above array is not sorted.");
+            return;
+        }
+    }
+
+    puts("The above array is sorted.");
+    return;
+}
+
+void part(arr *p_a)
+{
+    int i = 0, j = p_a->length - 1;
+
+    while (i <= j)
+    {
+        while (p_a->A[i] < 0)
+            i++;
+        while (p_a->A[j] >= 0)
+            j--;
+
+        if (i < j)
+            swap(&p_a->A[i], &p_a->A[j]);
+    }
+}
