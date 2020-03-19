@@ -40,8 +40,28 @@ int main(void)
 
     display(A);
 
-    printf("%d\n", binary_search(&A, 3));
-    printf("%d\n", binary_search(&A, 19));
+    printf("%d\n", linear_search(&A, 3));
+    printf("%d\n", linear_search(&A, 19));
+
+    printf("Element at index 4: %d\n", get(&A, 4));
+    set(&A, 3, 2);
+
+    display(A);
+
+    printf("Max: %d\n", max(&A));
+    printf("Min: %d\n", min(&A));
+
+    printf("Avg: %d\n", avg(&A));
+
+    reverse(&A);
+
+    display(A);
+
+    rotate(&A, 'l');
+
+    display(A);
+
+    rotate(&A, 'r');
 
     free(A.A);
 

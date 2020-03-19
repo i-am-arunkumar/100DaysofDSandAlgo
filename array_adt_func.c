@@ -127,3 +127,88 @@ int binary_search(arr *p_a, int p_key)
 
     return -1;
 }
+
+int get(arr *p_a, int p_index)
+{
+    if (p_index < 0 && p_index >= p_a->length)
+        die("The required index is out of bound.");
+
+    return p_a->A[p_index];
+}
+
+void set(arr *p_a, int p_index, int p_element)
+{
+    if (p_index < 0 && p_index >= p_a->length)
+        die("The required index is out of bound.");
+
+    p_a->A[p_index] = p_element;
+}
+
+int max(arr *p_a)
+{
+    int max = p_a->A[0];
+
+    for (int i = 0; i < p_a->length; i++)
+    {
+        if (max < p_a->A[i])
+            max = p_a->A[i];
+    }
+
+    return max;
+}
+
+int min(arr *p_a)
+{
+    int min = p_a->A[0];
+
+    for (int i = 0; i < p_a->length; i++)
+    {
+        if (min > p_a->A[i])
+            min = p_a->A[i];
+    }
+
+    return min;
+}
+
+int sum(arr *p_a)
+{
+    int total = 0;
+
+    for (int i = 0; i < p_a->length; i++)
+        total += p_a->A[i];
+
+    return total;
+}
+
+int avg(arr *p_a)
+{
+    return sum(p_a) / p_a->length;
+}
+
+void reverse(arr *p_a)
+{
+    for (int i = 0, j = p_a->length - 1; i < j; i++, j--)
+        swap(&p_a->A[i], &p_a->A[j]);
+}
+
+void rotate(arr *p_a, char r)
+{
+    if (r == 'l')
+    {
+        int temp = p_a->A[0];
+
+        for (int i = 0; i < p_a->length - 1; i++)
+            p_a->A[i] = p_a->A[i + 1];
+
+        p_a->A[p_a->length - 1] = temp;
+    }
+    else
+    {
+        int temp = p_a->A[p_a->length - 1];
+
+        for (int i = p_a->length - 1; i >= 1; i--)
+            p_a->A[i] = p_a->A[i - 1];
+
+        p_a->A[0] = temp;
+    }
+}
