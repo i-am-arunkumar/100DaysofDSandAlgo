@@ -27,13 +27,41 @@ int main(void)
     S.s = (int *) malloc(S.size * sizeof(int));
     S.top = -1;
 
-    push(&S, 4);
-    push(&S, 6);
-    push(&S, 9);
+    int cont = 1;
 
-    printf("Value at position 2 is %d\n", peep(&S, 2));
+    while (cont)
+    {
+        puts("1. push\n2. pop\n3. peep\n4. display\nPress any other key to exit");
 
-    display(&S);
+        int choice, value, pos;
+        scanf("%d", &choice);
+
+        switch (choice)
+        {
+            case 1: 
+                printf("%s", "Enter the number to push: ");
+                scanf("%d", &value);
+                push(&S, value);
+                break;
+
+            case 2:
+                printf("Popped element from the stack: %d\n", pop(&S));
+                break;
+
+            case 3:
+                printf("%s", "Enter the position: ");
+                scanf("%d", &pos);
+                printf("Element at %d: %d\n", pos, peep(&S, pos));
+                break;
+
+            case 4:
+                display(&S);
+                break;
+
+            default:
+                cont = 0;
+        }
+    }
 
     free(S.s);
     S.s = NULL;
