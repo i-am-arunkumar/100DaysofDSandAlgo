@@ -43,13 +43,13 @@ int main(void)
         switch (choice)
         {
             case 1: 
-                printf("%s", "Enter the number to push: ");
+                printf("%s", "Enter the number to enqueue: ");
                 scanf("%d", &value);
                 enqueue(&Q, value);
                 break;
 
             case 2:
-                printf("Popped element from the stack: %d\n", dequeue(&Q));
+                printf("Dequeued element from the queued: %d\n", dequeue(&Q));
                 break;
 
             case 3:
